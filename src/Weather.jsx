@@ -1,17 +1,17 @@
 import React, {useState} from "react";
-import "./Weather.css";
+import "./weather.css";
 import axios from "axios";
 import WeatherDisplay from "./WeatherDisplay.jsx";
 
-function Weather() {
-    const [ready, setReady] = useState (false);
-    const [weatherData, setWeatherData] = useState({});
+function Weather(props) {
+    const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
 
     function handleResponse (response) {
-        setReady(true);
+
         setWeatherData ({ 
             
+            ready: true,
             temperature: response.data.temperature.current,
             humidity: response.data.temperature.humidity,
             wind: response.data.wind.speed,
@@ -43,7 +43,7 @@ function Weather() {
     }
 
 
-if (ready) {
+if (weatherData.ready) {
     return (
         <div className= "Weather">
 
@@ -61,7 +61,7 @@ if (ready) {
 
         search();
 
-        return ("Loading...");
+        return "Loading...";
        
        }
 
