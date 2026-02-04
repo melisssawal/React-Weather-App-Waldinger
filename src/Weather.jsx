@@ -2,12 +2,15 @@ import React, {useState} from "react";
 import "./weather.css";
 import axios from "axios";
 import WeatherDisplay from "./WeatherDisplay.jsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
     const [city, setCity] = useState(props.defaultCity);
 
     function handleResponse (response) {
+
+        console.log(response.data);
 
         setWeatherData ({ 
             
@@ -18,7 +21,7 @@ function Weather(props) {
             city: response.data.city,
             description: response.data.condition.description,
             feelsLike: response.data.temperature.feels_like,
-            iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/fog.png`,
+            iconUrl: `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${response.data.condition.icon}.png`,
             date: new Date (response.data.time * 1000),
 
         })
@@ -45,9 +48,9 @@ function Weather(props) {
 
 if (weatherData.ready) {
     return (
-        <div className= "Weather">
+        <div className="Weather">
 
-            <form action="Search" onSubmit={handleSubmit}>
+            <form action="Search" onSubmit={handleSubmit} >
             <div className="row text-center">
                 <div className="col-10">
                 <input type="search" placeholder="Enter a city..." className="form-control" onChange={handleCityChange}/></div>
