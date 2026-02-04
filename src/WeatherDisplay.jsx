@@ -1,6 +1,7 @@
 import React from "react";
 import FormattedDate from "./FormattedDate.jsx";
 import Weather from "./Weather.jsx";
+import WeatherTemperatureUnit from "./WeatherTemperatureUnit.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -20,7 +21,8 @@ function WeatherDisplay (props) {
                 <div className="col-6">
                     <div className = "clearfix">
                     <img src={props.data.iconUrl} alt={props.data.description} />
-                    {Math.round(props.data.temperature)}°C
+                    <WeatherTemperatureUnit celcius={props.data.temperature}/>
+                   
                 </div>
                 </div>
                 <div className="col-6">
