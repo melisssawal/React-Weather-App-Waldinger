@@ -1,5 +1,74 @@
 .Weather {
-    border: 1px solid black;
     margin: 0 auto;
     padding: 30px 70px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    font-size: 18px;
+}
+
+form {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+}
+
+input {
+    padding: 18px;
+}
+
+.search-text {
+    width: 80%;
+    border-radius: 5px;
+}
+
+.search-button {
+    background-color: rgb(67, 61, 115);
+    color: white;
+    border: 1px solid rgb(54, 49, 94);
+    border-radius: 5px;
+    width: 18%;
+    margin-left: 6px;
+}
+
+.main-description {
+    opacity: 85%;
+}
+
+.icon {
+position: relative;
+top: -12px;
+left: 6px;
+    
+}
+
+.icon-temperature-section {
+     padding: 0;
+     position: relative;
+     right: 29px;
+
+}
+
+.temperature-digit {
+    margin: 0 auto;
+    font-size: 52px;
+}
+
+.temperature-unit {
+    position: relative;
+    top: -23px;
+    left: 6px;
+    font-size: 15px;
+}
+
+a {
+    text-decoration-line: none;
+}
+
+
+
+a:visited {
+    color: rgb(67, 61, 115);
+    text-decoration-line: none;
 }

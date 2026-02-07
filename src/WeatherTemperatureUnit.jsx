@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import "./weather.css";
 
 
 function WeatherTemperatureUnit (props) {
@@ -21,7 +22,7 @@ function WeatherTemperatureUnit (props) {
 
    if ( unit === "celcius") {
     return (
-         <div className="temperature">{Math.round(props.celcius)} <span><a href="/" onClick={celciusUnit}>°C</a> | <a href="/" onClick={fahrenheitUnit}>°F</a></span></div>
+         <span className="temperature"> <span className="temperature-digit">{Math.round(props.celcius)}</span><span className="temperature-unit"><a href="/" onClick={celciusUnit}>°C</a> | <a href="/" onClick={fahrenheitUnit}>°F</a></span></span>
     )
 
 } else {
@@ -29,7 +30,7 @@ function WeatherTemperatureUnit (props) {
     let fahrenheitTemperature = (props.celcius * 9/5) + 32;
 
     return (
-         <div className="temperature">{Math.round(fahrenheitTemperature)} <span><a href="/" onClick={celciusUnit}>°C</a> | <a href="/" onClick={fahrenheitUnit}>°F</a></span></div>
+         <span className="temperature"><span className="temperature-digit">{Math.round(fahrenheitTemperature)}</span> <span className="temperature-unit"><a href="/" onClick={celciusUnit}>°C</a> | <a href="/" onClick={fahrenheitUnit}>°F</a></span></span>
     )
 } 
 

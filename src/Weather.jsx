@@ -10,7 +10,6 @@ function Weather(props) {
 
     function handleResponse (response) {
 
-        console.log(response.data);
 
         setWeatherData ({ 
             
@@ -50,12 +49,12 @@ if (weatherData.ready) {
     return (
         <div className="Weather">
 
-            <form action="Search" onSubmit={handleSubmit} >
-            <div className="row text-center">
-                <div className="col-10">
-                <input type="search" placeholder="Enter a city..." className="form-control" onChange={handleCityChange}/></div>
-                <div className="col-2"><input type="submit" value= "Search" className="btn btn-primary"/></div>
-                </div>
+            <form action="Search" onSubmit={handleSubmit}>
+    
+                    <input className="search-text" type="search" placeholder="Enter a city..."  onChange={handleCityChange}  />
+                
+                    <input className="search-button" type="submit" value= "Search" />
+            
             </form>
             <WeatherDisplay  data={weatherData} />
             
