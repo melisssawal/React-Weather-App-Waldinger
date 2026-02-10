@@ -3,6 +3,7 @@ import "./weather.css";
 import axios from "axios";
 import WeatherDisplay from "./WeatherDisplay.jsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Forecast from "./Forecast.jsx";
 
 function Weather(props) {
     const [weatherData, setWeatherData] = useState({ ready: false });
@@ -57,6 +58,7 @@ if (weatherData.ready) {
             
             </form>
             <WeatherDisplay  data={weatherData} />
+            <Forecast data={weatherData} />
             
              </div> )
        } else {

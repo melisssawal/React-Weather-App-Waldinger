@@ -72,3 +72,14 @@ a:visited {
     color: rgb(67, 61, 115);
     text-decoration-line: none;
 }
+
+
+@media (min-width: 900px) {
+
+.Weather {
+        margin: 0 auto;
+        padding: 10px 40px;
+        text-align: center;
+}
+
+}

@@ -1,0 +1,16 @@
+.Forecast {
+    text-align: center;
+    font-size: 14px;
+    
+}
+
+
+.forecast-max-temp {
+
+    opacity: 75%;
+    margin-left: 5px;
+}
+
+.forecast-icon {
+    width: 51px;
+}
