@@ -6,18 +6,26 @@ import axios from "axios";
 
 function Forecast (props) {
     const [city, setCity] = useState ("");
+    const [loaded, setLoaded] = useState (false);
+    const [forecastData, setForecastData] = useState ({});
+
 
 
 
     function handleResponse (response) {
         console.log(response.data);
-        setCity (props.data.city)
+        setCity (props.data.city);
+        setLoaded(true);
+        //setForecastData {
+
+
+        //}
     }
     
-    const apiKey = "34d34bfd03ebff0892b49ada97eo706t";
-    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
-    axios.get(apiUrl).then(handleResponse);
+   
 
+
+if (loaded) {
 
     return (
         <div className="Forecast">
@@ -32,6 +40,17 @@ function Forecast (props) {
             </div>
         </div>
     )
+
+
+} else {
+    
+    const apiKey = "34d34bfd03ebff0892b49ada97eo706t";
+    let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
+    axios.get(apiUrl).then(handleResponse);
+
+    return null;
+
+}
 }
 
 
