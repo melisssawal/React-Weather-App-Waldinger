@@ -1,11 +1,11 @@
 import React, {useState} from "react";
 import "./forecast.css";
 import axios from "axios";
+import ForecastDate from "./ForecastDate";
 
 
 
 function Forecast (props) {
-    const [city, setCity] = useState ("");
     const [loaded, setLoaded] = useState (false);
     const [forecastData, setForecastData] = useState ({});
 
@@ -13,13 +13,11 @@ function Forecast (props) {
 
 
     function handleResponse (response) {
-        console.log(response.data);
-        setCity (props.data.city);
         setLoaded(true);
-        //setForecastData {
+        setForecastData(response.data.daily);
 
 
-        //}
+
     }
     
    
@@ -29,21 +27,26 @@ if (loaded) {
 
     return (
         <div className="Forecast">
-            <div className="row">
-                <div className="col">
-                    <div className="forecast-weekday">Mon</div>
-                    <div><img src={props.data.iconUrl} alt={props.data.description} className="forecast-icon" /></div>
-                    <span className="forecast-min-temp">19°</span>
-                    <span className="forecast-max-temp">27°</span>
+               <div className="row">
+                {forecastData.map(function(dailyForecast, index){
 
-                </div>
+                    if (index < 5) {
+                        return (
+                        <div className="col" key={index}>
+                            <ForecastDate data={dailyForecast} />
+                        </div>); 
+                        }
+                    })}
+                
             </div>
         </div>
     )
 
 
 } else {
-    
+
+
+    let city = props.data.city;
     const apiKey = "34d34bfd03ebff0892b49ada97eo706t";
     let apiUrl = `https://api.shecodes.io/weather/v1/forecast?query=${city}&key=${apiKey}`;
     axios.get(apiUrl).then(handleResponse);
