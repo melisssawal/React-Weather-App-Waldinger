@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import "./forecast.css";
 import axios from "axios";
 import ForecastDate from "./ForecastDate";
@@ -8,6 +8,10 @@ import ForecastDate from "./ForecastDate";
 function Forecast (props) {
     const [loaded, setLoaded] = useState (false);
     const [forecastData, setForecastData] = useState ({});
+
+    useEffect (() => {
+        setLoaded(false);
+    }, [props.data.city]);
 
 
 
