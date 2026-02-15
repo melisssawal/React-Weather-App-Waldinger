@@ -14,3 +14,13 @@
 .forecast-icon {
     width: 51px;
 }
+
+.forecast-weekday {
+    opacity: 60%;
+    font-weight: bold;
+}
+
+.forecast-icon {
+    width: 60px;
+
+}

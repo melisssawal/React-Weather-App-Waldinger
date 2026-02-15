@@ -5,6 +5,7 @@ function ForecastDate(props) {
     
     function day() {
 
+
         let date = new Date(props.data.time * 1000);
         let day = date.getDay();
 
@@ -14,11 +15,13 @@ function ForecastDate(props) {
 
     }
 
-    function icon() {
-         let iconUrl = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.data.condition.icon}.png`;
+    function icon () {
+        let iconUrl = `http://shecodes-assets.s3.amazonaws.com/api/weather/icons/${props.data.condition.icon}.png`;
 
-         return iconUrl[icon];
+        return iconUrl ;
     }
+
+ 
 
     return (      
 

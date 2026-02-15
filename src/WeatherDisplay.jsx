@@ -24,9 +24,9 @@ function WeatherDisplay (props) {
                 </div>
                 <div className="col-5">
                     <ul className="list-unstyled">
-                        <li>Feels Like: {Math.round(props.data.feelsLike)}°C</li>
-                        <li>Humidity: {props.data.humidity}%</li>
-                        <li>Wind: {Math.round(props.data.wind)}km/h</li>
+                        <li><span className="description-lines">Feels Like:</span> {Math.round(props.data.feelsLike)}°C</li>
+                        <li><span className="description-lines">Humidity:</span> {props.data.humidity}%</li>
+                        <li><span className="description-lines">Wind:</span> {Math.round(props.data.wind)}km/h</li>
                     </ul>
                 </div>
                 </div>

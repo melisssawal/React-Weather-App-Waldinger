@@ -20,8 +20,6 @@ function Forecast (props) {
         setLoaded(true);
         setForecastData(response.data.daily);
 
-
-
     }
     
    

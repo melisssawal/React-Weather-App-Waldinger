@@ -62,6 +62,11 @@ left: 6px;
     font-size: 15px;
 }
 
+.description-lines {
+    font-weight: 600;
+    opacity: 80%;
+}
+
 a {
     text-decoration-line: none;
 }
@@ -74,12 +79,29 @@ a:visited {
 }
 
 
-@media (min-width: 900px) {
+
+@media (max-width: 1000px) {
 
 .Weather {
         margin: 0 auto;
-        padding: 10px 40px;
+        padding: 20px;
         text-align: center;
+}
+
+form {
+    margin-bottom: 10px;
+    padding: 5px;
+    font-size: 12px;
+    width: 100%;
+}
+
+input {
+    padding: 12px;
+}
+
+.search-button {
+    width: 18%;
+    margin-left: 2px;
 }
 
 }
